@@ -4,45 +4,92 @@
  * @param {Array} arr
  * @returns {Number}
  */
-const sumMultiples = arr => {
+const sumMultiples = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
   var sum = 0;
-  arr.forEach(element => {
-    if (element % 3 == 0  || element % 5 == 0){
+  arr.forEach((element) => {
+    if (element % 3 == 0 || element % 5 == 0) {
       sum = sum + element;
     }
-  })
+  });
+  return sum;
 };
 
 /**
- * This function will receive a string of characters and should return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.
+ * This function will receive a string of characters and should return true/false
+ * depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.
  * @param {String} str
  * @returns {Boolean}
  */
-const isValidDNA = str => {
+const isValidDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+  var arr = [];
+  arr = str.split("");
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] != "C" && arr[i] != "G" && arr[i] != "T" && arr[i] != "A") {
+      return false;
+    }
+  }
+  return true;
 };
 
 /**
- * This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
+ * This function will receive a valid DNA string (see above) and should return
+ * a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
  * @param {String} str
  * @returns {String}
  */
-const getComplementaryDNA = str => {
+const getComplementaryDNA = (str) => {
   if (str === undefined) throw new Error("str is required");
+
+  var compDNA = "";
+  var arr = [];
+  arr = str.split("");
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] == "A") {
+      compDNA = compDNA + "T";
+    }
+    if (arr[i] == "C") {
+      compDNA = compDNA + "G";
+    }
+    if (arr[i] == "T") {
+      compDNA = compDNA + "A";
+    }
+    if (arr[i] == "G") {
+      compDNA = compDNA + "C";
+    }
+  }
+  return compDNA;
 };
 
 /**
- * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
+ * This function should receive a number and return true/false depending on
+ *whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
  * @param {Number} n
  * @returns {Boolean}
  */
-const isItPrime = n => {
+const isItPrime = (n) => {
   if (n === undefined) throw new Error("n is required");
+
+  if (n === 1) {
+    return false;
+  } else if (n === 2) {
+    return true;
+  } else {
+    for (var i = 2; i < n; i++) {
+      if (n % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 };
 
 /**
- * This function should receive a number and return an array of n arrays, each filled with n items. The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:
+ * This function should receive a number and return an array of n arrays, each filled with n items.
+ * The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:
  * [
  *   ["foo", "foo", "foo"],
  *   ["foo", "foo", "foo"],
@@ -55,6 +102,14 @@ const isItPrime = n => {
 const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
+
+  var root = Math.sqrt(n);
+  var arr = [];
+  for (var i = 0; i < root; i++) {
+    arr[i] = new Array(root);
+    arr[i].fill(fill);
+  }
+  return arr;
 };
 
 /**
@@ -72,6 +127,20 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+
+  var count = 0;
+  for (var i = 0; i < staff.length; i++) {
+    for (var j = 0; j < staff[i].rota.length; j++) {
+      if (day == staff[i].rota[j]) {
+        count++;
+      }
+    }
+  }
+  if (count >= 3) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 module.exports = {
@@ -80,5 +149,5 @@ module.exports = {
   getComplementaryDNA,
   isItPrime,
   createMatrix,
-  areWeCovered
+  areWeCovered,
 };
