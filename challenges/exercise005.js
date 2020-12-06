@@ -12,14 +12,14 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
-  var count1 = 0;
-  var count0 = 0;
-  var array = str.split("");
+  let count1 = 0;
+  let count0 = 0;
+  let array = str.split("");
   array.forEach((element) => {
-    if (element == "1") {
+    if (element === "1") {
       count1++;
     }
-    if (element == "0") {
+    if (element === "0") {
       count0++;
     }
   });
@@ -34,7 +34,7 @@ const reverseNumber = (n) => {
 
 const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
-  var sum = 0;
+  let sum = 0;
   arrs.forEach((element) => {
     for (var i = 0; i < element.length; i++) {
       sum = sum + element[i];
@@ -45,7 +45,7 @@ const sumArrays = (arrs) => {
 
 const arrShift = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
-  var newArr = [];
+  let newArr = [];
   if (arr.length <= 1) {
     return arr;
   } else {
@@ -77,14 +77,15 @@ const findNeedle = (haystack, searchTerm) => {
 
 const getWordFrequencies = (str) => {
   if (str === undefined) throw new Error("str is required");
-  var jsonresult ={};
-  var arr = [];
+  let jsonresult ={};
+  let arr = [];
   arr = str.toLowerCase().replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, "").split(" ");
 
   arr.sort();
-  var current = null;
-  var cnt = 0;
+  let current = null;
+  let cnt = 0;
   for (var i = 0; i < arr.length; i++) {
+    //Here I also find it more difficult to read because there are several if
     if (arr[i] != current) {
       if (cnt > 0) {
         
@@ -94,7 +95,7 @@ const getWordFrequencies = (str) => {
       cnt = 1;
     } else {
       cnt++;
-    }
+    }    
   }
   if (cnt > 0) {
     jsonresult[current] = cnt;
