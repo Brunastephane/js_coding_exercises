@@ -5,8 +5,8 @@
 const sumDigits = (n) => {
   if (n === undefined) throw new Error("n is required");
 
-  var sum = 0;
-  var str = n.toString().split("");
+  let sum = 0;
+  let str = n.toString().split("");
 
   for (var i = 0; i < str.length; i++) {
     sum = sum + Number(str[i]);
@@ -28,7 +28,7 @@ const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
 
-  var range = [];
+  const range = [];
   if(step == null){
     step = 1;
   }
@@ -76,7 +76,7 @@ const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
 
-  var screenAddicts = [];
+  const screenAddicts = [];
 
   users.forEach((user) => {
     user.screenTime.forEach((screenDay) => {
