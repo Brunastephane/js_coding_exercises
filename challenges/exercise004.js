@@ -1,6 +1,6 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  var smallNum = [];
+  let smallNum = [];
   nums.forEach(element => {
       if (element < 1){
         smallNum.push(element);
@@ -12,7 +12,7 @@ function findSmallNums(nums) {
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  var findNames = [];
+  let findNames = [];
   names.forEach(element => {
     if (char == element.charAt(0)){
       findNames.push(element);
@@ -23,7 +23,7 @@ function findNamesBeginningWith(names, char) {
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  var verbs = [];
+  let verbs = [];
   words.forEach(element => {
     if (element.substring(0,3) == "to "){
       verbs.push(element);
@@ -34,7 +34,7 @@ function findVerbs(words) {
 
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  var intergers = [];
+  let intergers = [];
   nums.forEach(element => {
     if (Number.isInteger(element)){
       intergers.push(element);
@@ -45,7 +45,7 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  var cities = [];
+  let cities = [];
   for(var i = 0; i < users.length; i++){
     cities.push(users[i].data.city.displayName);
   }
@@ -54,7 +54,7 @@ function getCities(users) {
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  var result = [];
+  let result = [];
   nums.forEach(element => {
     result.push(parseFloat(Math.sqrt(element).toFixed(2)));
   })
@@ -64,7 +64,7 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  var findsentence = [];
+  let findsentence = [];
 
   sentences.forEach(element => {
     if(element.toUpperCase().indexOf(str.toUpperCase()) != (-1)){
@@ -76,7 +76,7 @@ function findSentencesContaining(sentences, str) {
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  var longestSides = [];
+  let longestSides = [];
   triangles.forEach(element => {
     longestSides.push(Math.max.apply(Math,element));
   })
