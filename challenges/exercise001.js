@@ -23,7 +23,7 @@ function getSalePrice(originalPrice, reduction) {
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  if (str.length % 2 == 0){
+  if (str.length % 2 === 0){
     return str.charAt((str.length/2) -1) + str.charAt(str.length/2);
   } 
   else{
@@ -33,7 +33,7 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  var newword = "";
+  let newword = "";
   for (var i = word.length -1; i >= 0; i--){
     newword += word[i];
   }
@@ -43,9 +43,9 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  var newwords = [];
+  let newwords = [];
   words.forEach(element => {
-    var newword = "";
+    let newword = "";
     for (var i = element.length - 1; i >= 0; i--) {
       newword += element[i];
     }
@@ -57,9 +57,9 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  var count = 0;
+  let count = 0;
   for(var i in users){
-    if(users[i].type == "Linux"){
+    if(users[i].type === "Linux"){
       count ++;
     }
   } 
@@ -68,7 +68,7 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  var sum = 0
+  let sum = 0
   for(var i = 0; i < scores.length; i++){
     sum = sum + scores[i];
   }
@@ -77,15 +77,15 @@ function getMeanScore(scores) {
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  if (n % 3 == 0 && n % 5 !=0) {
+  if (n % 3 === 0 && n % 5 !=0) {
     return "fizz";
   }
     
-  if (n % 5 == 0 && n % 3 !=0) {
+  if (n % 5 === 0 && n % 3 !=0) {
     return "buzz";
   }
 
-  if (n % 3 == 0 && n % 5 ==0) {    
+  if (n % 3 === 0 && n % 5 ===0) {    
     return "fizzbuzz";
   }else{
     return n;
