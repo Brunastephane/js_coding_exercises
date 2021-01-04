@@ -34,7 +34,7 @@ function getMiddleCharacter(str) {
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
   let newword = "";
-  for (var i = word.length -1; i >= 0; i--){
+  for (let i = word.length -1; i >= 0; i--){
     newword += word[i];
   }
   return newword;
@@ -46,7 +46,7 @@ function reverseAllWords(words) {
   let newwords = [];
   words.forEach(element => {
     let newword = "";
-    for (var i = element.length - 1; i >= 0; i--) {
+    for (let i = element.length - 1; i >= 0; i--) {
       newword += element[i];
     }
     newwords.push(newword);
@@ -58,7 +58,7 @@ function reverseAllWords(words) {
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
   let count = 0;
-  for(var i in users){
+  for(let i in users){
     if(users[i].type === "Linux"){
       count ++;
     }
@@ -69,7 +69,7 @@ function countLinuxUsers(users) {
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
   let sum = 0
-  for(var i = 0; i < scores.length; i++){
+  for(let i = 0; i < scores.length; i++){
     sum = sum + scores[i];
   }
   return parseFloat((sum / scores.length).toFixed(2));

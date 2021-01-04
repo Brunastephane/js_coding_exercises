@@ -8,7 +8,7 @@ const sumDigits = (n) => {
   let sum = 0;
   let str = n.toString().split("");
 
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     sum = sum + Number(str[i]);
   }
 
@@ -42,7 +42,7 @@ const createRange = (start, end, step) => {
 };
 
 /**
- * This function takes an array of user objects and their usage in minutes of various applications.
+ * This function takes an array of user objects and their usage in minutes of letious applications.
  * The format of the data should be as follows:
  * [
  *  {
@@ -81,9 +81,9 @@ const getScreentimeAlertList = (users, date) => {
   users.forEach((user) => {
     user.screenTime.forEach((screenDay) => {
       if (screenDay.date == date) {
-        var mins = 0;
+        let mins = 0;
 
-        for (var prop in screenDay.usage) {
+        for (let prop in screenDay.usage) {
           mins = mins + screenDay.usage[prop];
         }
 
@@ -133,7 +133,7 @@ const hexToRGB = (hexStr) => {
 const findWinner = (board) => {
   if (board === undefined) throw new Error("board is required");
 
-  for (var i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i++) {
     if (board[i][0] === "X" && board[i][1] === "X" && board[i][2] === "X") {
       return "X";
     }
@@ -142,7 +142,7 @@ const findWinner = (board) => {
     }
   }
 
-  for (var j = 0; j < 3; j++) {
+  for (let j = 0; j < 3; j++) {
     if (board[0][j] === "X" && board[1][j] === "X" && board[2][j] === "X") {
       return "X";
     }

@@ -2,7 +2,7 @@ const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
 
-  for (var i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (n == nums[i] && i < nums.length - 1) {
       return nums[i + 1];
     }
@@ -36,7 +36,7 @@ const sumArrays = (arrs) => {
   if (arrs === undefined) throw new Error("arrs is required");
   let sum = 0;
   arrs.forEach((element) => {
-    for (var i = 0; i < element.length; i++) {
+    for (let i = 0; i < element.length; i++) {
       sum = sum + element[i];
     }
   });
@@ -50,7 +50,7 @@ const arrShift = (arr) => {
     return arr;
   } else {
     newArr.push(arr[arr.length - 1]);
-    for (var i = 1; i < arr.length - 1; i++) {
+    for (let i = 1; i < arr.length - 1; i++) {
       newArr.push(arr[i]);
     }
     newArr.push(arr[0]);
@@ -62,7 +62,7 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
 
-  for (var key in haystack) {
+  for (let key in haystack) {
     if (
       haystack[key]
         .toString()
@@ -84,7 +84,7 @@ const getWordFrequencies = (str) => {
   arr.sort();
   let current = null;
   let cnt = 0;
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     //Here I also find it more difficult to read because there are several if
     if (arr[i] != current) {
       if (cnt > 0) {
