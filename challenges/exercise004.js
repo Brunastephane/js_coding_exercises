@@ -1,12 +1,6 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  let smallNum = [];
-  nums.forEach(element => {
-      if (element < 1){
-        smallNum.push(element);
-      }
-  });
-  return smallNum;
+    return nums.filter(num => num < 1)
 }
 
 function findNamesBeginningWith(names, char) {
@@ -64,14 +58,14 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  let findsentence = [];
+  let findSentence = [];
 
   sentences.forEach(element => {
     if(element.toUpperCase().indexOf(str.toUpperCase()) != (-1)){
-      findsentence.push(element);
+      findSentence.push(element);
     }
   })
-  return findsentence;
+  return findSentence;
 }
 
 function getLongestSides(triangles) {

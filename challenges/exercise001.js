@@ -33,25 +33,25 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  let newword = "";
+  let newWord = "";
   for (let i = word.length -1; i >= 0; i--){
-    newword += word[i];
+    newWord += word[i];
   }
-  return newword;
+  return newWord;
 }
 
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  let newwords = [];
+  let newWords = [];
   words.forEach(element => {
-    let newword = "";
+    let newWord = "";
     for (let i = element.length - 1; i >= 0; i--) {
-      newword += element[i];
+      newWord += element[i];
     }
-    newwords.push(newword);
+    newWords.push(newWord);
   });
-  return newwords;
+  return newWords;
   
 }
 

@@ -1,32 +1,32 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
 
-  let newnums = [];
+  let newNums = [];
   nums.forEach((element) => {
-    newnums.push(element * element);
+    newNums.push(element * element);
   });
-  return newnums;
+  return newNums;
 }
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  let newword = "";
+  let newWord = "";
   for (let i in words) {
     //when the formula is bigger I believe it is more readable that way
     if (i == 0) {
-      newword = newword + words[i];
+      newWord += words[i];
     } else {
-      newword = newword + words[i].charAt(0).toUpperCase() + words[i].slice(1);
+      newWord += words[i].charAt(0).toUpperCase() + words[i].slice(1);
     }    
   }
-  return newword;
+  return newWord;
 }
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
   let count = 0;
   for (let i = 0; i < people.length; i++) {
-    count = count + people[i].subjects.length;
+    count += people[i].subjects.length;
   }
   return count;
 }
@@ -35,15 +35,9 @@ function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
 
-  for (let i = 0; i < menu.length; i++) {
-    for (let j = 0; j < menu[i].ingredients.length; j++) {
-      // I don't know how to simplify this if condition
-      if (menu[i].ingredients[j] === ingredient) {
-        return true;
-      }
-    }
-  }
-  return false;
+  const arr = [];
+  menu.forEach(obj => obj.ingredients.forEach(ing => { if (ing === ingredient) arr.push(ing) }));
+  return arr.length > 0;
 }
 
 function duplicateNumbers(arr1, arr2) {
